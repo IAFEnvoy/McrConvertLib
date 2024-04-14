@@ -52,8 +52,8 @@ dependencies {
 
 `SoundUtil`: Fast way to play and stop sound on both client and server.
 
-`Stage`: Provide skin textures depend on Boss/Entity Stage.
+`Stage`: (**Temporarily removed**) Provide skin textures depend on Boss/Entity Stage.
 
 `Timeout`: Create timeout tasks.
 
-`EntityRendererBase`: Fast way to create renderers with player model. (Better with `StagedEntityTextureProvider` in `Stage`)
+`EntityRendererBase`: (**Temporarily removed**) Fast way to create renderers with player model. (Better with `StagedEntityTextureProvider` in `Stage`)
