@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.misc;
 
 @FunctionalInterface
 public interface Consumer5<T1, T2, T3, T4, T5> {

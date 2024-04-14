@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.misc;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;

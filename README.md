@@ -10,6 +10,18 @@ This is a library to convert MCreator project into Java project more convenient.
 
 Primary served version: `1.18.2 forge` -> `1.20.1 fabric`
 
+## Maven?
+```gradle
+maven {
+   name = "IAFEnvoy Libs"
+   url = 'https://maven.iafenvoy.com/'
+}
+
+dependencies {
+    modImplementation "com.iafenvoy:mcrconvertlib:${mcrconvertlib_version}"
+}
+```
+
 ## Features?
 
 `ArmorWithTickItem`: Add `onArmorTick(World world, PlayerEntity entity)` method to armors.

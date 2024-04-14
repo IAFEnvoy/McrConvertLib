@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.item;
+package com.iafenvoy.mcrconvertlib.item;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

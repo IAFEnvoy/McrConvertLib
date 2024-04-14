@@ -1,6 +1,6 @@
-package net.iafenvoy.mcrconvertlib.mixin;
+package com.iafenvoy.mcrconvertlib.mixin;
 
-import net.iafenvoy.mcrconvertlib.item.ArmorWithTickItem;
+import com.iafenvoy.mcrconvertlib.item.ArmorWithTickItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import org.spongepowered.asm.mixin.Final;

@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.item;
+package com.iafenvoy.mcrconvertlib.item;
 
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;

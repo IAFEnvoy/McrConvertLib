@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.misc;
 
 import io.netty.util.internal.UnstableApi;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;

@@ -1,6 +1,6 @@
-package net.iafenvoy.mcrconvertlib.mixin;
+package com.iafenvoy.mcrconvertlib.mixin;
 
-import net.iafenvoy.mcrconvertlib.item.SwordItemBase;
+import com.iafenvoy.mcrconvertlib.item.SwordItemBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

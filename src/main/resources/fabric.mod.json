@@ -14,6 +14,9 @@
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
+    "main": [
+      "com.iafenvoy.mcrconvertlib.McrConvertLib"
+    ]
   },
   "mixins": [
     "mcrconvertlib.mixins.json"

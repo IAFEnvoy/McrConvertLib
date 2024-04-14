@@ -1,4 +1,4 @@
-package net.iafenvoy.mcrconvertlib.item;
+package com.iafenvoy.mcrconvertlib.item;
 
 import com.ibm.icu.impl.Pair;
 import net.minecraft.block.entity.BannerPattern;
