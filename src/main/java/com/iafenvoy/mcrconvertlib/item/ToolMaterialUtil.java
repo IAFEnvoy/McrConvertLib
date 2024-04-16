@@ -1,23 +1,11 @@
 package com.iafenvoy.mcrconvertlib.item;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ToolMaterialBase {
-    public static ToolMaterial of(int uses, float speed, float attackDamageBonus, int level, int enchantmentLevel) {
-        return of(uses, speed, attackDamageBonus, level, enchantmentLevel, new Item[0]);
-    }
-
-    public static ToolMaterial of(int uses, float speed, float attackDamageBonus, int level, int enchantmentLevel, Block... repairIngredient) {
-        Item[] item = new Item[repairIngredient.length];
-        for (int i = 0; i < repairIngredient.length; i++)
-            item[i] = repairIngredient[i].asItem();
-        return of(uses, speed, attackDamageBonus, level, enchantmentLevel, item);
-    }
-
-    public static ToolMaterial of(int uses, float speed, float attackDamageBonus, int level, int enchantmentLevel, Item... repairIngredients) {
+public class ToolMaterialUtil {
+    public static ToolMaterial of(int uses, float speed, float attackDamageBonus, int level, int enchantmentLevel, ItemConvertible... repairIngredients) {
         return new ToolMaterial() {
             @Override
             public int getDurability() {

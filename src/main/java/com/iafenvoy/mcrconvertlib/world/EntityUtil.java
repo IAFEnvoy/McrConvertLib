@@ -1,6 +1,7 @@
-package com.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.world;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -11,6 +12,19 @@ public class EntityUtil {
         if (entityToSpawn != null) {
             entityToSpawn.refreshPositionAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
             entityToSpawn.initialize(world, world.getLocalDifficulty(entityToSpawn.getBlockPos()), SpawnReason.MOB_SUMMONED, null, null);
+            world.spawnEntity(entityToSpawn);
+        }
+    }
+
+    public static void lightening(ServerWorld world, double x, double y, double z) {
+        lightening(world, x, y, z, true);
+    }
+
+    public static void lightening(ServerWorld world, double x, double y, double z, boolean cosmetic) {
+        LightningEntity entityToSpawn = EntityType.LIGHTNING_BOLT.create(world);
+        if (entityToSpawn != null) {
+            entityToSpawn.refreshPositionAfterTeleport(VecUtil.createBottomCenter(x, y, z));
+            entityToSpawn.setCosmetic(cosmetic);
             world.spawnEntity(entityToSpawn);
         }
     }

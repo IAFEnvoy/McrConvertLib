@@ -11,6 +11,7 @@ This is a library to convert MCreator project into Java project more convenient.
 Primary served version: `1.18.2 forge` -> `1.20.1 fabric`
 
 ## Maven?
+
 ```gradle
 maven {
    name = "IAFEnvoy Libs"
@@ -24,6 +25,9 @@ dependencies {
 
 ## Features?
 
+### Item
+`ArmorMaterialUtil`: Fast way to create a `ArmorMaterial`.
+
 `ArmorWithTickItem`: Add `onArmorTick(World world, PlayerEntity entity)` method to armors.
 
 `BannerUtil`: Fast way to create banner item stack.
@@ -36,11 +40,26 @@ dependencies {
 
 `SwordItemBase`: Add `onSwingHand(ItemStack itemtack, World world, double x, double y, double z)` method to swords.
 
-`ToolMaterialBase`: Fast way to create a `ToolMaterial`.
+`ToolMaterialUtil`: Fast way to create a `ToolMaterial`.
+
+### Misc
 
 `ComponentUtil`: Spilt text into lines with same render length.
 
 `Consumer5`: Provide a Consumer with 5 params.
+
+`RandomHelper`: Generate random without Minecraft Random.
+
+`Timeout`: Create timeout tasks.
+
+#### Render
+
+`EntityRendererBase`: Fast way to create renderers with player model. (Better with `StagedEntityTextureProvider`
+in `Stage`)
+
+`Stage`: Provide skin textures depend on Boss/Entity Stage.
+
+#### World
 
 `DamageUtil`: Fast way to build `DamageSource` with given `DamageType`
 
@@ -48,12 +67,6 @@ dependencies {
 
 `ParticleUtil`: Fast way to spawn circle and 3x3 particles.
 
-`RandomHelper`: Generate random without Minecraft Random.
-
 `SoundUtil`: Fast way to play and stop sound on both client and server.
 
-`Stage`: (**Temporarily removed**) Provide skin textures depend on Boss/Entity Stage.
-
-`Timeout`: Create timeout tasks.
-
-`EntityRendererBase`: (**Temporarily removed**) Fast way to create renderers with player model. (Better with `StagedEntityTextureProvider` in `Stage`)
+`VecUtil`: Fast way to create a `BlockPos` and block center pos with 3 `double` location.

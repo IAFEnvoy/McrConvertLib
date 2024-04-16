@@ -1,4 +1,4 @@
-package com.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.world;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;

@@ -24,7 +24,6 @@ public class Timeout {
         create(waitTicks, 1, callback);
     }
 
-    @UnstableApi
     public static void create(int waitTicks, int maxTimes, Runnable callback) {
         if (maxTimes <= 0) return;
         if (waitTicks <= 0) callback.run();

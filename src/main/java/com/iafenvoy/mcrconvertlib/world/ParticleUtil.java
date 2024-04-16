@@ -1,4 +1,4 @@
-package com.iafenvoy.mcrconvertlib.misc;
+package com.iafenvoy.mcrconvertlib.world;
 
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
