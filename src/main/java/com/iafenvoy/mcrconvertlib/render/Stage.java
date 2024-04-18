@@ -9,10 +9,6 @@ import java.util.HashMap;
 public enum Stage {
     First, Second, Third, Forth, Fifth, Sixth;
 
-    public static StagedEntityTextureProvider ofProvider(String... textures) {
-        return ofProvider("minecraft", textures);
-    }
-
     public static StagedEntityTextureProvider ofProvider(String modId, String... textures) {
         return new StagedEntityTextureProvider(modId, textures);
     }

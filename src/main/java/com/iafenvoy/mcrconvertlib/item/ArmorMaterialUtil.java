@@ -12,15 +12,15 @@ import java.util.EnumMap;
 public class ArmorMaterialUtil {
     public static ArmorMaterial of(String name, int[] baseDurability, int durabilityMul, int[] protection, int enchantAbility, SoundEvent equipSound, float toughness, float knockBackResistance, ItemConvertible... repairIngredients) {
         return of(name, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
-            map.put(ArmorItem.Type.HELMET, baseDurability[0]);
-            map.put(ArmorItem.Type.CHESTPLATE, baseDurability[1]);
-            map.put(ArmorItem.Type.LEGGINGS, baseDurability[2]);
-            map.put(ArmorItem.Type.BOOTS, baseDurability[3]);
+            map.put(ArmorItem.Type.HELMET, baseDurability[3]);
+            map.put(ArmorItem.Type.CHESTPLATE, baseDurability[2]);
+            map.put(ArmorItem.Type.LEGGINGS, baseDurability[1]);
+            map.put(ArmorItem.Type.BOOTS, baseDurability[0]);
         }), durabilityMul, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
-            map.put(ArmorItem.Type.HELMET, protection[0]);
-            map.put(ArmorItem.Type.CHESTPLATE, protection[1]);
-            map.put(ArmorItem.Type.LEGGINGS, protection[2]);
-            map.put(ArmorItem.Type.BOOTS, protection[3]);
+            map.put(ArmorItem.Type.HELMET, protection[3]);
+            map.put(ArmorItem.Type.CHESTPLATE, protection[2]);
+            map.put(ArmorItem.Type.LEGGINGS, protection[1]);
+            map.put(ArmorItem.Type.BOOTS, protection[0]);
         }), enchantAbility, equipSound, toughness, knockBackResistance, repairIngredients);
     }
 

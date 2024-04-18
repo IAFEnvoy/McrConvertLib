@@ -1,6 +1,5 @@
 package com.iafenvoy.mcrconvertlib.misc;
 
-import io.netty.util.internal.UnstableApi;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 
 import java.util.concurrent.CopyOnWriteArrayList;
