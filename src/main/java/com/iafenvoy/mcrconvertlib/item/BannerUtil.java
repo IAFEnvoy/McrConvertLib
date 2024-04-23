@@ -1,6 +1,5 @@
 package com.iafenvoy.mcrconvertlib.item;
 
-import com.ibm.icu.impl.Pair;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
@@ -12,6 +11,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Pair;
 
 public class BannerUtil {
     @SafeVarargs
@@ -19,7 +19,7 @@ public class BannerUtil {
         NbtCompound nbtCompound = new NbtCompound();
         BannerPattern.Patterns p = new BannerPattern.Patterns();
         for (Pair<RegistryKey<BannerPattern>, DyeColor> pattern : patterns)
-            p.add(pattern.first, pattern.second);
+            p.add(pattern.getLeft(), pattern.getRight());
         nbtCompound.put("Patterns", p.toNbt());
         ItemStack itemStack = new ItemStack(baseItem);
         BlockItem.setBlockEntityNbt(itemStack, BlockEntityType.BANNER, nbtCompound);
