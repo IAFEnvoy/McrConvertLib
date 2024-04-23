@@ -12,10 +12,11 @@ Primary served version: `1.18.2 forge` -> `1.20.1 fabric`
 
 ## Maven?
 
+If you are not using Gradle Groovy, see: https://maven.iafenvoy.com/#/releases
 ```gradle
 maven {
    name = "IAFEnvoy Libs"
-   url = 'https://maven.iafenvoy.com/'
+   url = "https://maven.iafenvoy.com/releases"
 }
 
 dependencies {
