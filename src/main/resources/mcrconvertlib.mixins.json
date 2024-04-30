@@ -4,11 +4,13 @@
   "package": "com.iafenvoy.mcrconvertlib.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EntityMixin",
     "LivingEntityMixin",
     "PlayerInventoryMixin"
   ],
   "client": [
   ],
+  "refmap": "McrConvertLib-refmap.json",
   "injectors": {
     "defaultRequire": 1
   }

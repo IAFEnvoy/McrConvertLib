@@ -8,8 +8,8 @@ import net.minecraft.world.World;
 public class MonsterEntityBase extends HostileEntity {
     private final EntityGroup mobType;
 
-    protected MonsterEntityBase(EntityType<? extends HostileEntity> p_33002_, World p_33003_, EntityGroup mobType) {
-        super(p_33002_, p_33003_);
+    protected MonsterEntityBase(EntityType<? extends HostileEntity> entityType, World world, EntityGroup mobType) {
+        super(entityType, world);
         this.mobType = mobType;
         this.setAiDisabled(false);
     }

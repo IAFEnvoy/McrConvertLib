@@ -1,5 +1,6 @@
 package com.iafenvoy.mcrconvertlib.mixin;
 
+import com.iafenvoy.mcrconvertlib.item.ISwingable;
 import com.iafenvoy.mcrconvertlib.item.SwordItemBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -27,8 +28,8 @@ public abstract class LivingEntityMixin extends Entity {
     private void onSwingHand(Hand hand, boolean fromServerPlayer, CallbackInfo ci) {
         ItemStack stack = this.getStackInHand(hand);
         Item item = stack.getItem();
-        if (item instanceof SwordItemBase sword)
-            if (sword.onSwingHand(stack, this.getWorld(), getX(), getY(), getZ()))
+        if (item instanceof ISwingable iSwingable)
+            if (iSwingable.onEntitySwing(stack, this))
                 ci.cancel();
     }
 }

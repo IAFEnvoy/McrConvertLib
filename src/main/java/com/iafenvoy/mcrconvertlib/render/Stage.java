@@ -7,7 +7,29 @@ import net.minecraft.util.Identifier;
 import java.util.HashMap;
 
 public enum Stage {
-    First, Second, Third, Forth, Fifth, Sixth;
+    Zero(0),
+    First(1),
+    Second(2),
+    Third(3),
+    Forth(4),
+    Fifth(5),
+    Sixth(6);
+    private final int index;
+
+    Stage(int index) {
+        this.index = index;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public static Stage getByIndex(int index) {
+        for (Stage s : Stage.values())
+            if (s.index == index)
+                return s;
+        return Stage.Zero;
+    }
 
     public static StagedEntityTextureProvider ofProvider(String modId, String... textures) {
         return new StagedEntityTextureProvider(modId, textures);
@@ -25,8 +47,8 @@ public enum Stage {
         public StagedEntityTextureProvider(String modId, String... textures) {
             this.modId = modId;
             Stage[] stages = Stage.values();
-            for (int i = 0; i < stages.length && i < textures.length; i++)
-                this.textureIds.put(stages[i], textures[i]);
+            for (int i = 0; i < stages.length - 1 && i < textures.length; i++)
+                this.textureIds.put(stages[i + 1], textures[i]);
         }
 
         public StagedEntityTextureProvider setEyeTextureId(String eyeTextureId) {
