@@ -45,6 +45,8 @@ dependencies {
 
 ### Misc
 
+`CommandHelper`: Execute a command on an entity.
+
 `ComponentUtil`: Spilt text into lines with same render length.
 
 `Consumer5`: Provide a Consumer with 5 params.

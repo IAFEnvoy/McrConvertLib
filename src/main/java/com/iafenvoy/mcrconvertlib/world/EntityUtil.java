@@ -1,9 +1,12 @@
 package com.iafenvoy.mcrconvertlib.world;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 
 public class EntityUtil {
@@ -27,5 +30,15 @@ public class EntityUtil {
             entityToSpawn.setCosmetic(cosmetic);
             world.spawnEntity(entityToSpawn);
         }
+    }
+
+    public static void item(ServerWorld world, double x, double y, double z, ItemConvertible item, int pickUpDelay) {
+        item(world, x, y, z, new ItemStack(item), pickUpDelay);
+    }
+
+    public static void item(ServerWorld world, double x, double y, double z, ItemStack item, int pickUpDelay) {
+        ItemEntity entityToSpawn = new ItemEntity(world, x, y + 1.0d, z, item);
+        entityToSpawn.setPickupDelay(pickUpDelay);
+        world.spawnEntity(entityToSpawn);
     }
 }
