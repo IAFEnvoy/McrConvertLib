@@ -1,6 +1,7 @@
 package com.iafenvoy.mcrconvertlib.misc;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.server.MinecraftServer;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -25,21 +26,20 @@ public class Timeout {
 
     public static void create(int waitTicks, int maxTimes, Runnable callback) {
         if (maxTimes <= 0) return;
-        if (waitTicks <= 0) callback.run();
-        else timeouts.add(new Timeout(waitTicks, maxTimes, callback));
+        timeouts.add(new Timeout(waitTicks, maxTimes, callback));
     }
 
     public static void startTimeout() {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
-            timeouts.forEach(Timeout::tick);
+            timeouts.forEach(x -> x.tick(server));
             timeouts.removeAll(timeouts.stream().filter(timeout -> timeout.shouldRemove).toList());
         });
     }
 
-    public void tick() {
+    public void tick(MinecraftServer server) {
         this.ticks++;
         if (this.ticks >= this.waitTicks) {
-            this.callback.run();
+            server.execute(this.callback);
             this.currentTimes++;
             if (this.currentTimes >= this.maxTimes)
                 shouldRemove = true;

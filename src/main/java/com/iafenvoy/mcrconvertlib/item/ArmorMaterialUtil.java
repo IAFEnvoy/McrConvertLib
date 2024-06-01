@@ -4,7 +4,9 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
 import java.util.EnumMap;
@@ -25,6 +27,8 @@ public class ArmorMaterialUtil {
     }
 
     public static ArmorMaterial of(String name, EnumMap<ArmorItem.Type, Integer> baseDurability, int durabilityMul, EnumMap<ArmorItem.Type, Integer> protection, int enchantAbility, SoundEvent equipSound, float toughness, float knockBackResistance, ItemConvertible... repairIngredients) {
+        if (equipSound == null) equipSound = Registries.SOUND_EVENT.get(new Identifier(""));
+        SoundEvent finalEquipSound = equipSound;
         return new ArmorMaterial() {
             @Override
             public int getDurability(ArmorItem.Type slot) {
@@ -43,7 +47,7 @@ public class ArmorMaterialUtil {
 
             @Override
             public SoundEvent getEquipSound() {
-                return equipSound;
+                return finalEquipSound;
             }
 
             @Override

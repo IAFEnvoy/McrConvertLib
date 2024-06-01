@@ -1,5 +1,6 @@
 package com.iafenvoy.mcrconvertlib.world;
 
+import com.iafenvoy.mcrconvertlib.McrConvertLib;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LightningEntity;
@@ -24,6 +25,7 @@ public class EntityUtil {
     }
 
     public static void lightening(ServerWorld world, double x, double y, double z, boolean cosmetic) {
+        if (!world.getGameRules().getBoolean(McrConvertLib.showModLightening)) return;
         LightningEntity entityToSpawn = EntityType.LIGHTNING_BOLT.create(world);
         if (entityToSpawn != null) {
             entityToSpawn.refreshPositionAfterTeleport(VecUtil.createBottomCenter(x, y, z));

@@ -13,6 +13,7 @@ Primary served version: `1.18.2 forge` -> `1.20.1 fabric`
 ## Maven?
 
 If you are not using Gradle Groovy, see: https://maven.iafenvoy.com/#/releases
+
 ```gradle
 maven {
    name = "IAFEnvoy Libs"
@@ -27,6 +28,7 @@ dependencies {
 ## Features?
 
 ### Item
+
 `ArmorMaterialUtil`: Fast way to create a `ArmorMaterial`.
 
 `ArmorWithTickItem`: Add `onArmorTick(World world, PlayerEntity entity)` method to armors.
@@ -59,6 +61,8 @@ dependencies {
 
 `EntityRendererBase`: Fast way to create renderers with player model. (Better with `StagedEntityTextureProvider`
 in `Stage`)
+
+`SkullRenderRegistry`: Provide ways to register skull renderers.
 
 `Stage`: Provide skin textures depend on Boss/Entity Stage.
 
